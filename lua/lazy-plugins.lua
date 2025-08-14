@@ -7,7 +7,7 @@
 --
 --  To update plugins you can run
 --    :Lazy update
---
+
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
@@ -29,29 +29,7 @@ require('lazy').setup({
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
   },
-  {
-    'stevearc/oil.nvim',
-    ---@module 'oil'
-    ---@type oil.SetupOpts
-    opts = {},
-    -- Optional dependencies
-    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
-    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-    lazy = false,
-    config = function()
-      require('oil').setup {
-        keymaps = {
-          ['<C-h>'] = false, -- Remove default split mappings if they conflict
-          ['<C-l>'] = false,
-          ['<C-k>'] = false,
-          ['<C-j>'] = false,
-          ['<leader>e'] = 'actions.close', -- Close oil with leader+e (toggle behavior)
-        },
-      }
-      vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Open parent directory' })
-    end,
-  },
+  { 'kshenoy/vim-signature' },
   { 'numToStr/Comment.nvim', opts = {} },
   {
     'rachartier/tiny-inline-diagnostic.nvim',
@@ -64,14 +42,11 @@ require('lazy').setup({
   },
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
-  {
-    'olrtg/nvim-emmet',
-    config = function()
-      vim.keymap.set({ 'n', 'v' }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
-    end,
-  },
+  require 'kickstart.plugins.nvim-emmet',
 
   require 'kickstart.plugins.gitsigns',
+
+  require 'kickstart.plugins.catppuccin',
 
   require 'kickstart.plugins.which-key',
 
@@ -81,9 +56,21 @@ require('lazy').setup({
 
   require 'kickstart.plugins.conform',
 
-  require 'kickstart.plugins.blink-cmp',
+  require 'kickstart.plugins.startify',
 
-  require 'kickstart.plugins.tokyonight',
+  --themes
+  --require 'kickstart.plugins.tokyonight',
+  require 'kickstart.plugins.rosepine',
+  --require 'kickstart.plugins.alabaster',
+  --require 'kickstart.plugins.darkness',
+  --require 'kickstart.plugins.komau-vim',
+  --require 'kickstart.plugins.vim-256noir',
+  --require 'kickstart.plugins.kanagawa',
+  --require 'kickstart.plugins.no-clown-fiesta',
+  --require 'kickstart.plugins.vim-phoenox',
+  --require 'kickstart.plugins.nightfox',
+  --require 'kickstart.plugins.onedark',
+  --require 'kickstart.plugins.gruvbox',
 
   require 'kickstart.plugins.todo-comments',
 
@@ -91,6 +78,11 @@ require('lazy').setup({
 
   require 'kickstart.plugins.treesitter',
 
+  require 'kickstart.plugins.oil',
+
+  require 'kickstart.plugins.nvim-cmp',
+
+  --require 'kickstart.plugins.blink-cmp',
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
@@ -100,11 +92,11 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
-
-  -- require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.iceberg',
+  require 'kickstart.plugins.autopairs',
   --require 'kickstart.plugins.neo-tree',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`

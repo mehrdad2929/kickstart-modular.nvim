@@ -1,0 +1,3 @@
+return {
+  'Jorenar/vim-darkness',
+}

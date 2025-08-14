@@ -3,6 +3,19 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+-- Indent settings
+vim.opt.tabstop = 4 -- Display tabs as 2 spaces
+vim.opt.shiftwidth = 4 -- Indent/outdent by 2 spaces
+vim.opt.expandtab = true -- Use spaces instead of tabs
+vim.opt.autoindent = true -- Copy indent from current line when starting new line
+vim.opt.smartindent = true -- Smart indent (optional for JS)
+
+-- Show whitespace characters (optional, but helpful)
+vim.opt.list = true
+vim.opt.listchars:append 'space:⋅' -- Optional: show spaces as dots
+vim.opt.listchars:append 'eol:¬'
+vim.opt.listchars:append 'tab:>·' -- Tabs shown as `>···` (makes mixed tabs obvious)
+
 -- Make line numbers default
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
