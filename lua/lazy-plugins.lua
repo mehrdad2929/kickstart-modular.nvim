@@ -58,9 +58,11 @@ require('lazy').setup({
 
   require 'kickstart.plugins.startify',
 
+  require 'kickstart.plugins.harpoon',
   --themes
   --require 'kickstart.plugins.tokyonight',
   require 'kickstart.plugins.rosepine',
+  --require 'kickstart.plugins.ayu',
   --require 'kickstart.plugins.alabaster',
   --require 'kickstart.plugins.darkness',
   --require 'kickstart.plugins.komau-vim',
