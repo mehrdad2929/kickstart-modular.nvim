@@ -4,17 +4,11 @@
 --  For more options, you can see `:help option-list`
 
 -- Indent settings
-vim.opt.tabstop = 4 -- Display tabs as 2 spaces
-vim.opt.shiftwidth = 4 -- Indent/outdent by 2 spaces
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.autoindent = true -- Copy indent from current line when starting new line
 vim.opt.smartindent = true -- Smart indent (optional for JS)
-
--- Show whitespace characters (optional, but helpful)
-vim.opt.list = true
-vim.opt.listchars:append 'space:⋅' -- Optional: show spaces as dots
-vim.opt.listchars:append 'eol:¬'
-vim.opt.listchars:append 'tab:>·' -- Tabs shown as `>···` (makes mixed tabs obvious)
 
 -- Make line numbers default
 vim.o.number = true
@@ -32,9 +26,7 @@ vim.o.showmode = false
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
-end)
+vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true

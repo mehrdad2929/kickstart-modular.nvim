@@ -42,9 +42,14 @@ require('lazy').setup({
   },
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
-  require 'kickstart.plugins.nvim-emmet',
+
+  -- require 'kickstart.plugins.coc-prisma',
+
+  require 'kickstart.plugins.prisma',
 
   require 'kickstart.plugins.gitsigns',
+
+  require 'kickstart.plugins.typescript-tools',
 
   require 'kickstart.plugins.catppuccin',
 
@@ -62,17 +67,16 @@ require('lazy').setup({
   --themes
   --require 'kickstart.plugins.tokyonight',
   require 'kickstart.plugins.rosepine',
-  --require 'kickstart.plugins.ayu',
-  --require 'kickstart.plugins.alabaster',
-  --require 'kickstart.plugins.darkness',
-  --require 'kickstart.plugins.komau-vim',
-  --require 'kickstart.plugins.vim-256noir',
-  --require 'kickstart.plugins.kanagawa',
-  --require 'kickstart.plugins.no-clown-fiesta',
-  --require 'kickstart.plugins.vim-phoenox',
-  --require 'kickstart.plugins.nightfox',
-  --require 'kickstart.plugins.onedark',
-  --require 'kickstart.plugins.gruvbox',
+  require 'kickstart.plugins.ayu',
+  require 'kickstart.plugins.alabaster',
+  require 'kickstart.plugins.darkness',
+  require 'kickstart.plugins.komau-vim',
+  require 'kickstart.plugins.vim-256noir',
+  require 'kickstart.plugins.kanagawa',
+  require 'kickstart.plugins.no-clown-fiesta',
+  require 'kickstart.plugins.vim-phoenox',
+  require 'kickstart.plugins.nightfox',
+  require 'kickstart.plugins.gruvbox',
 
   require 'kickstart.plugins.todo-comments',
 
@@ -81,10 +85,13 @@ require('lazy').setup({
   require 'kickstart.plugins.treesitter',
 
   require 'kickstart.plugins.oil',
+  require 'kickstart.plugins.fugitive',
 
-  require 'kickstart.plugins.nvim-cmp',
+  -- require 'kickstart.plugins.nvim-cmp',
 
-  --require 'kickstart.plugins.blink-cmp',
+  require 'kickstart.plugins.markdown-preview',
+
+  require 'kickstart.plugins.blink-cmp',
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
@@ -98,7 +105,6 @@ require('lazy').setup({
   require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.iceberg',
-  require 'kickstart.plugins.autopairs',
   --require 'kickstart.plugins.neo-tree',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
@@ -132,5 +138,10 @@ require('lazy').setup({
     },
   },
 })
+
+-- Startup colorscheme: this is the only place to change it.
+-- Any installed scheme works: 'ayu', 'rose-pine', 'gruvbox-material',
+-- 'gruvbox-material-dark-hard', 'gruvbox-material-light-soft', ...
+vim.cmd.colorscheme 'rose-pine'
 
 -- vim: ts=2 sts=2 sw=2 et

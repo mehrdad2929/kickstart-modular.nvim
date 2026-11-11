@@ -219,6 +219,28 @@ return {
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         ts_ls = {},
+
+        emmet_language_server = {
+          filetypes = { 'html', 'css', 'scss', 'less', 'sass', 'javascriptreact', 'typescriptreact', 'vue', 'svelte' },
+          init_options = {
+            showAbbreviationSuggestions = true,
+            showExpandedAbbreviation = 'always',
+            showMenuWithoutPrefix = false,
+            syntaxProfiles = {},
+            excludeLanguages = {},
+            variables = {},
+          },
+        },
+
+        html = {
+          init_options = {
+            embeddedLanguages = {
+              javascript = true,
+              css = true,
+              javascriptreact = true,
+            },
+          },
+        },
         --
 
         lua_ls = {

@@ -11,7 +11,6 @@ return {
         'javascript',
         'html',
         'diff',
-        'html',
         'lua',
         'luadoc',
         'markdown',
@@ -19,6 +18,7 @@ return {
         'query',
         'vim',
         'vimdoc',
+        'prisma',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
