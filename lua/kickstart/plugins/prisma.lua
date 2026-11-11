@@ -1,16 +1,4 @@
-return {
-  -- Syntax highlighting
-  { 'prisma/vim-prisma' },
+-- Prisma syntax highlighting; the `prismals` server is configured in lspconfig.lua
+vim.pack.add { 'https://github.com/prisma/vim-prisma' }
 
-  -- Treesitter support
-
-  -- LSP configuration
-  {
-    'neovim/nvim-lspconfig',
-    opts = function(_, opts)
-      opts.servers = opts.servers or {}
-      opts.servers.prismals = {}
-      return opts
-    end,
-  },
-}
+-- vim: ts=2 sts=2 sw=2 et

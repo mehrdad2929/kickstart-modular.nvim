@@ -1,25 +1,19 @@
-return {
-  {
-    'stevearc/oil.nvim',
-    ---@module 'oil'
-    ---@type oil.SetupOpts
-    opts = {},
-    -- Optional dependencies
-    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
-    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-    lazy = false,
-    config = function()
-      require('oil').setup {
-        keymaps = {
-          ['<C-h>'] = false, -- Remove default split mappings if they conflict
-          ['<C-l>'] = false,
-          ['<C-k>'] = false,
-          ['<C-j>'] = false,
-          ['<leader>e'] = 'actions.close', -- Close oil with leader+e (toggle behavior)
-        },
-      }
-      vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Open parent directory' })
-    end,
+-- Oil: edit your filesystem like a buffer
+
+vim.pack.add {
+  'https://github.com/echasnovski/mini.icons',
+  'https://github.com/stevearc/oil.nvim',
+}
+
+require('oil').setup {
+  keymaps = {
+    ['<C-h>'] = false, -- Remove default split mappings if they conflict
+    ['<C-l>'] = false,
+    ['<C-k>'] = false,
+    ['<C-j>'] = false,
+    ['<leader>e'] = 'actions.close', -- Close oil with leader+e (toggle behavior)
   },
 }
+vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Open parent directory' })
+
+-- vim: ts=2 sts=2 sw=2 et

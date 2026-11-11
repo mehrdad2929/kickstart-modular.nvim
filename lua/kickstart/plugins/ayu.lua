@@ -1,3 +1,3 @@
-return {
-  'ayu-theme/ayu-vim',
-}
+vim.pack.add { 'https://github.com/ayu-theme/ayu-vim' }
+
+-- vim: ts=2 sts=2 sw=2 et
