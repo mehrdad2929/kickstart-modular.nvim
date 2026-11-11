@@ -15,6 +15,9 @@ vim.g.have_nerd_font = true
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+-- Use 24-bit colors. Colorschemes and nvim-colorizer rely on this being on.
+vim.o.termguicolors = true
+
 -- Indent settings
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
